@@ -23,7 +23,7 @@ I changed few columns to make it messier for this Data Cleaning Project.
 
 
 
-##**Steps for Data Cleaning**
+##Steps for Data Cleaning
 
 **Change the Date Format**
 First thing First, change the format for the Date column. Going from Date and Time to Date only.
