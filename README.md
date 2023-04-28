@@ -25,10 +25,8 @@ I changed few columns to make it messier for this Data Cleaning Project.
 
 **Change the Date Format**
 First thing First, change the format for the Date column. Going from Date and Time to Date only.
-
 ```
-
-select SalesDate, convert(Date,SalesDate) as Date
+'select SalesDate, convert(Date,SalesDate) as Date'
 from dbo.salesdata
 
 update dbo.salesdata
