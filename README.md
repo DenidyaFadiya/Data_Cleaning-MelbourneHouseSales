@@ -6,6 +6,8 @@ Check the Full Query for Data Cleaning Project [here](https://github.com/Denidya
 
 In this Data Cleaning project I will be cleaning data that I took from [Kaggle Data Source](https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot).
 
+##Data Cleaning Project
+
 Prior to the project, I changed few columns to make it messier for this Data Cleaning Project.
 
 **Quick Overview**
