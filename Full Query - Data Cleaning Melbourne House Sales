@@ -1,0 +1,257 @@
+
+use AustralianHouse
+
+select *
+from dbo.SalesData
+order by House_Id
+
+select *
+from dbo.seller
+order by House_Id
+
+
+delete 
+from salesdata
+where House_Id is null
+
+select *
+from dbo.type
+
+drop table if exists dbo.salesdata
+drop table if exists dbo.seller
+drop table if exists dbo.type
+
+alter table 
+
+
+--------------------------
+
+---SQL data cleaning
+
+-- Standardize Date Format
+-- convert date time to date only
+
+select SalesDate, convert(Date,SalesDate) as Date
+from dbo.salesdata
+
+update dbo.salesdata
+set SalesDate = convert(Date,SalesDate)
+
+--the data in SaleDate table do not change, so we have to use alter table to insert the update
+
+alter table dbo.salesdata
+Add SaleDateUpdated Date;
+
+update dbo.salesdata
+set SaleDateUpdated = convert(Date,SalesDate)
+
+
+--divide the Suburb, Address, and the PostCode
+
+select
+	PropertyAddress,
+	parsename(replace(PropertyAddress, ',', '.') , 3) as Suburb,
+	parsename(replace(PropertyAddress, ',', '.') , 2) as Address,
+	parsename(replace(PropertyAddress, ',', '.') , 1) as PostCode
+from dbo.SalesData
+order by house_id
+
+
+--Updating the Suburb, Address, and the PostCode
+
+
+alter table dbo.SalesData
+add Suburb nvarchar(255);
+
+update dbo.SalesData
+set Suburb = parsename(replace(PropertyAddress, ',', '.') , 3)
+
+
+alter table dbo.SalesData
+add Address nvarchar(255);
+
+update dbo.SalesData
+set Address = parsename(replace(PropertyAddress, ',', '.') , 2)
+
+
+alter table dbo.SalesData
+add PostCode nvarchar(255);
+
+update dbo.SalesData
+set PostCode = parsename(replace(PropertyAddress, ',', '.') , 1)
+
+
+
+
+--trim and update any spaces
+
+select suburb,
+trim(suburb) as Suburb_Fixed
+from dbo.SalesData
+order by House_id
+
+update dbo.SalesData
+set Suburb = trim(Suburb)
+
+
+
+--Replace the suburb 'Alphington-wrong' to 'Altona'
+
+select House_Id, suburb
+from dbo.salesdata
+where suburb like '%wrong%'
+
+update dbo.salesdata
+set suburb = 'Altona' 
+where suburb like '%wrong%'
+
+select House_Id, suburb
+from dbo.salesdata
+where House_Id in (231,232)
+
+
+
+---dividing the suburb
+
+select 
+	suburb,
+	substring(Suburb, 1, charindex(' ', Suburb)) as FirstSuburb,
+	substring(Suburb, charindex(' ', Suburb) +1 , len(Suburb)) as LastSuburb
+from dbo.SalesData
+order by house_id
+
+alter table dbo.SalesData
+Add FirstSuburb Nvarchar(255);
+
+update dbo.SalesData
+set FirstSuburb = substring(Suburb, 1, charindex(' ', Suburb))
+
+
+alter table dbo.SalesData
+Add LastSuburb Nvarchar(255);
+
+update dbo.SalesData
+set LastSuburb = substring(Suburb, charindex(' ', Suburb) +1 , len(Suburb))
+
+
+
+--Capitalized only the first Character
+
+
+select suburb, 
+		upper(left(FirstSuburb,1))+lower(substring(FirstSuburb,2,len(FirstSuburb))) as FirstSuburb,
+		upper(left(LastSuburb,1))+lower(substring(LastSuburb,2,len(LastSuburb)))  as LastSuburb
+from dbo.SalesData
+
+update dbo.SalesData
+set FirstSuburb = upper(left(FirstSuburb,1))+lower(substring(FirstSuburb,2,len(FirstSuburb)))
+
+
+update dbo.SalesData
+set LastSuburb = upper(left(LastSuburb,1))+lower(substring(LastSuburb,2,len(LastSuburb)))
+
+
+
+--Concat the FirstSuburb and the LastSuburb as FixedSuburb
+
+select
+	FirstSuburb,
+	LastSuburb,
+	concat(FirstSuburb, ' ', LastSuburb) as FixedSuburb
+from dbo.SalesData
+
+alter table dbo.SalesData
+Add FixedSuburb Nvarchar(255);
+
+update dbo.SalesData
+set FixedSuburb = concat(FirstSuburb, ' ', LastSuburb)
+
+
+--Trim the FixedSuburb
+--The concat suburb has space at the begining of the data, then we have to trim to get rid of the space
+
+select FixedSuburb,
+trim(FixedSuburb) 
+from dbo.SalesData
+order by House_id
+
+update dbo.SalesData
+set FixedSuburb = trim(FixedSuburb)
+
+
+--dividing the Council Area and Region Name
+
+select 
+	Region,
+	substring(Region, 1, charindex(',', Region)-1) as CouncilArea,
+	substring(Region, charindex(',', Region) +1 , len(Region)) as RegionName
+from dbo.SalesData
+order by House_id
+
+
+alter table dbo.SalesData
+Add CouncilArea Nvarchar(255);
+
+update dbo.SalesData
+set CouncilArea = substring(Region, 1, charindex(',', Region)-1)
+
+
+alter table dbo.SalesData
+Add RegionName Nvarchar(255);
+
+update dbo.SalesData
+set RegionName = substring(Region, charindex(',', Region) +1 , len(Region))
+
+select CouncilArea, RegionName
+from salesdata
+
+--change the column title 'FixedSuburb' to 'Suburb'
+
+alter table dbo.SalesData
+Add Suburb Nvarchar(255);
+
+update dbo.SalesData
+set Suburb = fixedsuburb
+
+
+--change the name of 'SaleDataUpdated' to 'Date'
+
+alter table dbo.SalesData
+add Date nvarchar(255)
+
+update dbo.SalesData
+set Date = SaleDateUpdated
+
+
+
+--Drop unnecesarry column (column that has been cleaned)
+
+alter table dbo.SalesData
+drop column PropertyAddress, 
+			SalesDate, 
+			Region, 
+			FirstSuburb, 
+			LastSuburb, 
+			FixedSuburb,
+			SaleDateUpdated
+
+--trim and update any spaces (Seller Table)
+
+select Seller,
+trim(Seller) as Seller_Fixed
+from dbo.Seller
+order by House_id
+
+update dbo.Seller
+set Seller = trim(Seller)
+
+
+
+--Capitalized only the first name
+
+select upper(left(seller,1))+lower(substring(seller,2,len(seller)))
+from dbo.seller
+
+update dbo.seller
+set seller = upper(left(seller,1))+lower(substring(seller,2,len(seller)))
+
