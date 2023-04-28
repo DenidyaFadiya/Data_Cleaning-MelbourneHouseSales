@@ -8,7 +8,4 @@ Data Source : https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snaps
 I changed few columns to make it messier for this Data Cleaning Project.
 
 
-**Quick Overview
-**Raw Data (Before)
-
-
+*basic*
