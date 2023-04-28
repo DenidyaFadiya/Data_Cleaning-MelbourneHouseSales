@@ -1,16 +1,14 @@
 # MelbourneHouseSales
-Data Cleaning and Data Exploratory using SQL
+Data Cleaning using SQL
 
-In this project, we will be cleaning and exploring rawa data that i took from kaggle https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot and i changed it in few colums for data cleaning project.
+Full Query for Data Cleaning Project : 
 
-
-**Quick Insight**
-Before
-
-after 
+In this Data Cleaning project I will be cleaning data that I took from kaggle. 
+Data Source : https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot
+I changed few columns to make it messier for this Data Cleaning Project.
 
 
-
-**Data Cleaning
+**Quick Overview
+**Raw Data (Before)
 
 
