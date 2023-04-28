@@ -1,9 +1,9 @@
 # MelbourneHouseSales
 **Data Cleaning using SQL**
 
-Full Query for Data Cleaning Project : 
+Check the Full Query for Data Cleaning Project [here](https://github.com/DenidyaFadiya/MelbourneHouseSales/blob/main/Full%20Query%20-%20Data%20Cleaning%20Melbourne%20House%20Sales).
 
-In this Data Cleaning project I will be cleaning data that I took from kaggle.  [Click Here](https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot).
+In this Data Cleaning project I will be cleaning data that I took from [Kaggle Data Source](https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot).
 
 
 Data Source : https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot
