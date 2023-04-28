@@ -1,28 +1,6 @@
+--Select the database that we are going to be using
 
 use AustralianHouse
-
-select *
-from dbo.SalesData
-order by House_Id
-
-select *
-from dbo.seller
-order by House_Id
-
-
-delete 
-from salesdata
-where House_Id is null
-
-select *
-from dbo.type
-
-drop table if exists dbo.salesdata
-drop table if exists dbo.seller
-drop table if exists dbo.type
-
-alter table 
-
 
 --------------------------
 
