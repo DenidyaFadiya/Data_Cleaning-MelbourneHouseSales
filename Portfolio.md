@@ -1,4 +1,4 @@
-# MelbourneHouseSales
+# Data Cleaning Project Melbourne House Sales
 **Data Cleaning using SQL**
 In this Project I will be cleaning the raw data, using Substring, Parsename, Update, Upper, Lower, etc. to make the data cleaner and easier to analyze and visualize.
 
