@@ -1,9 +1,7 @@
 # Data Cleaning Project Melbourne House Sales
 **Data Cleaning using SQL**
 
-<p align="center">
-  <Data Cleaning Project Melbourne House Sales>
-</p>
+<div align="center"># Data Cleaning Project Melbourne House Sales</div>
 
 <p align="center">
   <img width="550" height="400" src="https://user-images.githubusercontent.com/129844542/235351094-9f97e963-d961-42bd-8013-2c9212e3dc41.jpeg">
