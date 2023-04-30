@@ -19,6 +19,10 @@ Prior to the project, I changed few columns to make it messier for this Data Cle
 **Quick Overview**
 **Raw Data (Before)**
 
+<p align="center">
+  <src="https://user-images.githubusercontent.com/129844542/235073933-61c4e0ea-8c16-4944-9841-efcf32c58f9a.png">
+</p>
+	
  ![image](https://user-images.githubusercontent.com/129844542/235073933-61c4e0ea-8c16-4944-9841-efcf32c58f9a.png)
 
 
