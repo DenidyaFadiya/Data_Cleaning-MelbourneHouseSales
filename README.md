@@ -10,6 +10,10 @@ In this Project I will be cleaning the raw data, using Substring, Parsename, Upd
 ## Full Query for Data Cleaning Project
 **Check the Full Query for Data Cleaning Project [here](https://github.com/DenidyaFadiya/MelbourneHouseSales/blob/main/Full%20Query%20-%20Data%20Cleaning%20Melbourne%20House%20Sales).**
 
+<p align="center">
+  <src="https://user-images.githubusercontent.com/129844542/235073933-61c4e0ea-8c16-4944-9841-efcf32c58f9a.png">
+</p>
+	
 In this Data Cleaning project I will be cleaning data that I took from [Kaggle Data Source](https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot).
 
 ## Data Cleaning Project
@@ -19,10 +23,6 @@ Prior to the project, I changed few columns to make it messier for this Data Cle
 **Quick Overview**
 **Raw Data (Before)**
 
-<p align="center">
-  <src="https://user-images.githubusercontent.com/129844542/235073933-61c4e0ea-8c16-4944-9841-efcf32c58f9a.png">
-</p>
-	
  ![image](https://user-images.githubusercontent.com/129844542/235073933-61c4e0ea-8c16-4944-9841-efcf32c58f9a.png)
 
 
