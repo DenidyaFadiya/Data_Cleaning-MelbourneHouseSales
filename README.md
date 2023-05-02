@@ -1,5 +1,9 @@
 # SQL Project - Data Cleaning Project Melbourne House Sales
 
+<p align="center">
+  <img width="550" height="400" src="https://user-images.githubusercontent.com/129844542/235351094-9f97e963-d961-42bd-8013-2c9212e3dc41.jpeg">
+</p>
+
 In this Project I will be cleaning the raw data, using Substring, Parsename, Update, Upper, Lower, etc. to make the data cleaner and easier to analyze and visualize.
 
 ## Full Query for Data Cleaning Project
