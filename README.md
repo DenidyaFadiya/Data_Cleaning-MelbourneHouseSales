@@ -23,7 +23,8 @@ Prior to the project, I changed few columns to make it messier for this Data Cle
 
 **Cleaned Data (After)**
 
- ![image](https://user-images.githubusercontent.com/129844542/235073945-cd3a9a77-c7a2-4c55-8ecd-8634bea0ecb2.png)
+![image](https://github.com/DenidyaFadiya/Data_Cleaning-MelbourneHouseSales/assets/129844542/e6bba995-f25e-4517-9a50-3cc19e1d2d8a)
+
 
 
 
@@ -259,6 +260,7 @@ set Date = SaleDateUpdated
 ```
 
 ### Final Result
-![image](https://user-images.githubusercontent.com/129844542/235074759-fadced25-e14b-45d7-8f83-bee7293fb3ad.png)
+![image](https://github.com/DenidyaFadiya/Data_Cleaning-MelbourneHouseSales/assets/129844542/df7d169a-beb6-4f99-b2af-477efceb08d8)
+
 
 
